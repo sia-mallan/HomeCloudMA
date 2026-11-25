@@ -33,7 +33,7 @@ Internet
 | 100 | DMZ | 10.0.100.1 | Reverse proxy for exposed services |
 | 999 | SINK | none | Unused ports, no routing |
  
-Firewall rules are default-deny between VLANs, with explicit allows per service. See [`docs/network.md`](docs/network.md).
+Firewall rules are default-deny between VLANs, with explicit allows per service. See [`configurations/network.md`](configurations/network.md).
  
 ## Hardware
  
@@ -72,14 +72,14 @@ Firewall rules are default-deny between VLANs, with explicit allows per service.
  
 | Doc | Description |
 |---|---|
-| [`docs/cisco-switch.md`](docs/cisco-switch.md) | Cisco switch configuration |
-| [`docs/pfsense.md`](docs/pfsense.md) | Firewall setup and rules |
+| [`configurations/cisco-switch.md`](configurations/cisco-switch.md) | Cisco switch configuration |
+| [`configurations/pfsense.md`](configurations/pfsense.md) | Firewall setup and rules |
  
 ## Challenges and Fixes
  
-**VLAN 50 devices received no DHCP.** The switch config checked out, but replies from pfSense weren't reaching the Pi. I traced it to the pfSense Realtek 2.5G NIC (`rge` driver) carrying the VLAN trunk, and planned to move the trunk to the Intel NIC. See [`docs/ciscoswitch.md`](docs/ciscoswitch.md#troubleshooting-log).
+**VLAN 50 devices received no DHCP.** The switch config checked out, but replies from pfSense weren't reaching the Pi. I traced it to the pfSense Realtek 2.5G NIC (`rge` driver) carrying the VLAN trunk, and planned to move the trunk to the Intel NIC.
  
-**Flat network to VLANs.** I started flat (10.0.0.0/24) and migrated to segmented VLANs once I had more services. The design notes are in [`docs/decisions.md`](docs/decisions.md).
+**Flat network to VLANs.** I started flat (10.0.0.0/24) and migrated to segmented VLANs once I had more services. The design notes are in [`configurations/decisions.md`](configurations/decisions.md).
  
 ## Security Notes
  
