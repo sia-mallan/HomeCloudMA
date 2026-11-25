@@ -139,4 +139,4 @@ show spanning-tree summary
 
 - Start with the switch config, then verify the firewall side. A correct switch config doesn't guarantee the trunk path works end to end.
 - NIC and driver choice matters for VLAN trunking on pfSense.
-- Slowing down setup process and confirming successful configuration! Adding all planned vlans at once caused issues troubleshooting specific vlan tagging and vlan communication.
+- Slowing down the setup process and confirming successful configuration was my biggest lesson. I originally created all planned VLANs at once, which made troubleshooting difficult when issues arose with specific VLANs or firewall communication rules between virtual networks.
